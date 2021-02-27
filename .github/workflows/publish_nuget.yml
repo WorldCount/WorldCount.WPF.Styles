@@ -1,9 +1,8 @@
-name: .NET
+name: Publish NuGet.org
 
 on:
   push:
-    branches: 
-      - master
+    branches: [ master ]
 
 jobs:
   build:
@@ -12,28 +11,24 @@ jobs:
     name: Update package
 
     steps:
-    - name: Restore repository
-    - uses: actions/checkout@v2
-    
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
     - name: Use .NET 3.1.405
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.405
         
-    - name: Install dependencies
-      run: dotnet restore
-      
-    - name: Build
+    - name: Building
       run: |
-        dotnet build WorldCount.WPF.Styles/WorldCount.WPF.Styles.csproj -c Debug --no-restore
-        dotnet build Tests/WorldCount.WPF.Styles.Tests/WorldCount.WPF.Styles.Tests.csproj -c Debug --no-restore
-      
-    - name: Run Test
-      run: dotnet test Tests/WorldCount.WPF.Styles.Tests/WorldCount.WPF.Styles.Tests.csproj --no-build --no-restore --verbosity normal
+        dotnet build WorldCount.WPF.Styles\WorldCount.WPF.Styles.csproj -c Release
+        dotnet build Tests\WorldCount.WPF.Styles.Tests\WorldCount.WPF.Styles.Tests.csproj -c Release
+        
+    - name: Testing
+      run: dotnet test Tests\WorldCount.WPF.Styles.Tests\WorldCount.WPF.Styles.Tests.csproj
       
     - name: Packing
-      run: dotnet pack WorldCount.WPF.Styles/WorldCount.WPF.Styles.csproj --no-build -c Release -v q
+      run: dotnet pack WorldCount.WPF.Styles\WorldCount.WPF.Styles.csproj --no-build -c Release -v q
       
-    - name: Publish package
-      run: dotnet nuget push WorldCount.WPF.Styles/bin/Release/*.nupkg -s https://api.nuget.org/v3/index.json -n --skip-duplicate -k ${{ secrets.NUGETAPIKEY }}
-      
+    - name: Publishing
+      run: dotnet nuget push WorldCount.WPF.Styles\bin\Release\*.nupkg -k ${{ secrets.NUGETAPIKEY }} -n --skip-duplicate -s https://api.nuget.org/v3/index.json
