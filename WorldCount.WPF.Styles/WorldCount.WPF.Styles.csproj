@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>1.0.0.1</Version>
-    <PackageReleaseNotes>Анимация перемещения заголовка в TaggetTextBox</PackageReleaseNotes>
+    <Version>1.0.0.2</Version>
+    <PackageReleaseNotes>Добавлен SwitcherCheckBox</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup>
