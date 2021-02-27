@@ -15,7 +15,7 @@
 
             <Grid Grid.Column="0" Width="32" Height="18">
                 <Border Name="Back" CornerRadius="9" Background="{StaticResource LightBlackBrush}">
-                    <Ellipse Name="Dot"  Fill="White" Width="16" Height="16" Margin="1" 
+                    <Ellipse Name="Dot"  Fill="{StaticResource WhiteBrush}" Width="16" Height="16" Margin="1" 
                                  HorizontalAlignment="Left">
                         <Ellipse.RenderTransform>
                             <TranslateTransform x:Name="DotTranslate"/>
@@ -46,11 +46,13 @@
                         <Storyboard>
                             <DoubleAnimation Storyboard.TargetName="DotTranslate" 
                                                  Storyboard.TargetProperty="X" 
-                                                 To="14" Duration="0:0:0.2"/>
+                                                 To="14" Duration="0:0:0.2"
+                                                 EasingFunction="{StaticResource CubicEaseInOut}"/>
                             <ColorAnimation Storyboard.TargetName="Back" 
                                                 Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
                                                 To="{StaticResource Green}"
-                                                Duration="0:0:0.4"/>
+                                                Duration="0:0:0.4"
+                                                EasingFunction="{StaticResource CubicEaseInOut}"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </Trigger.EnterActions>
@@ -60,11 +62,13 @@
                         <Storyboard>
                             <DoubleAnimation Storyboard.TargetName="DotTranslate" 
                                                  Storyboard.TargetProperty="X" 
-                                                 From="14" Duration="0:0:0.2"/>
+                                                 From="14" Duration="0:0:0.2"
+                                                 EasingFunction="{StaticResource CubicEaseInOut}"/>
                             <ColorAnimation Storyboard.TargetName="Back" 
                                                 Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
                                                 To="{StaticResource LightBlack}"
-                                                Duration="0:0:0.4"/>
+                                                Duration="0:0:0.4"
+                                                EasingFunction="{StaticResource CubicEaseInOut}"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </Trigger.ExitActions>
