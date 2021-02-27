@@ -1,7 +1,28 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <LangVersion>latest</LangVersion>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>1.0.0.1</Version>
+    <PackageReleaseNotes>Анимация перемещения заголовка в TaggetTextBox</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>WorldCount</Authors>
+    <Description>Пакет стилей и шаблонов элементов управления WPF под .NETCore 3.1</Description>
+    <Copyright>WorldCount</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/WorldCount/WorldCount.WPF.Styles</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/WorldCount/WorldCount.WPF.Styles</RepositoryUrl>
+    <PackageTags>WPF, Styles, Templates</PackageTags>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>WorldCount.WPF.Styles.snk</AssemblyOriginatorKeyFile>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
 </Project>

@@ -1,0 +1,28 @@
+name: .NET
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Testing
+    
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Use .NET 3.1.405
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.405
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: |
+        dotnet build WorldCount.WPF.Styles/WorldCount.WPF.Styles.csproj -c Debug --no-restore
+        dotnet build Tests/WorldCount.WPF.Styles.Tests/WorldCount.WPF.Styles.Tests.csproj -c Debug --no-restore
+      
+    - name: Run Test
+      run: dotnet test Tests/WorldCount.WPF.Styles.Tests/WorldCount.WPF.Styles.Tests.csproj --no-build --no-restore --verbosity normal
