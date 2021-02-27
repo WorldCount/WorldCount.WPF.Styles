@@ -30,4 +30,5 @@ jobs:
     - name: Packing
       run: dotnet pack WorldCount.WPF.Styles\WorldCount.WPF.Styles.csproj --no-build -c Release -v q
       
-      
+    - name: Publishing
+      run: dotnet nuget push WorldCount.WPF.Styles\bin\Release\*.nupkg -k ${{ secrets.NUGETAPIKEY }} -n --skip-duplicate -s https://api.nuget.org/v3/index.json
