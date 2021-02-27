@@ -8,65 +8,13 @@
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
 
-        <!--<ControlTemplate x:Key="TaggetTextBoxTemplate" TargetType="TextBox">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-
-                <Border Grid.Row="1" Name="Border"
-                        BorderBrush="{TemplateBinding BorderBrush}" 
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        Background="{TemplateBinding Background}"
-                        SnapsToDevicePixels="True">
-                    <ScrollViewer x:Name="PART_ContentHost" 
-                                  Focusable="False"
-                                  HorizontalScrollBarVisibility="Hidden"
-                                  VerticalScrollBarVisibility="Hidden"/>
-                </Border>
-
-                <TextBlock Name="Header" Grid.Row="0" Text="{TemplateBinding Tag}" Foreground="DimGray" Margin="0, 0, 0, 5"/>
-            </Grid>
-
-            <ControlTemplate.Triggers>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter Property="Opacity" Value="0.5"/>
-                </Trigger>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter TargetName="Border" Property="BorderBrush" Value="SeaGreen"/>
-                </Trigger>
-                <Trigger Property="IsKeyboardFocused" Value="True">
-                    <Setter TargetName="Border" Property="BorderBrush" Value="Firebrick"/>
-                </Trigger>
-
-                <MultiTrigger>
-                    <MultiTrigger.Conditions>
-                        <Condition Property="Text" Value=""/>
-                        <Condition Property="IsFocused" Value="False"/>
-                        <Condition Property="IsMouseOver" Value="False"/>
-                    </MultiTrigger.Conditions>
-
-                    <Setter TargetName="Header" Property="RenderTransform">
-                        <Setter.Value>
-                            <TranslateTransform X="5" Y="16"/>
-                        </Setter.Value>
-                    </Setter>
-                </MultiTrigger>
-            </ControlTemplate.Triggers>
-            
-        </ControlTemplate>
-
-        <Style x:Key="TaggetTextBoxStyle" TargetType="TextBox">
-            <Setter Property="Template" Value="{StaticResource TaggetTextBoxTemplate}"/>
-            <Setter Property="BorderBrush" Value="SteelBlue"/>
-            <Setter Property="BorderThickness" Value="0 0 0 2"/>
-        </Style>-->
     </Window.Resources>
+
     <Grid>
-        <TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10, 30"
-                 Width="120" Style="{StaticResource TaggetTextBoxStyle}"
-                 Tag="Введите имя:"/>
+        <CheckBox VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10, 25" 
+                  Content="Вы уверены?" Style="{StaticResource SwitcherCheckBoxStyle}"
+                  SnapsToDevicePixels="True" Padding="5, 0"
+                  />
         <TextBox VerticalAlignment="Top" Margin="10, 80" Width="120" HorizontalAlignment="Left"/>
     </Grid>
 </Window>

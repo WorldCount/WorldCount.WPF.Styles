@@ -6,6 +6,7 @@
          <ResourceDictionary>
              <ResourceDictionary.MergedDictionaries>
                  <ResourceDictionary Source="pack://application:,,,/WorldCount.WPF.Styles;component/Styles/TextBoxes/TaggetTexBox.xaml"/>
+                 <ResourceDictionary Source="pack://application:,,,/WorldCount.WPF.Styles;component/Styles/CheckBoxes/SwitcherCheckBox.xaml"/>
              </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>
     </Application.Resources>
