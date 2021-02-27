@@ -9,5 +9,7 @@
     <SolidColorBrush x:Key="GreenBrush" Color="SeaGreen"/>
     <SolidColorBrush x:Key="BlueBrush" Color="SteelBlue"/>
     <SolidColorBrush x:Key="GrayBrush" Color="DimGray"/>
+    <SolidColorBrush x:Key="OrangeBrush" Color="Orange"/>
+    <SolidColorBrush x:Key="DarkOrangeBrush" Color="DarkOrange"/>
     
 </ResourceDictionary>
