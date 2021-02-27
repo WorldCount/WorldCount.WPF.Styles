@@ -1,4 +1,4 @@
-name: .NET
+name: Publish NuGet.org
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
     name: Update package
 
     steps:
-    - name: Restore repository
+    - name: Checkout repository
     - uses: actions/checkout@v2
     
     - name: Use .NET 3.1.405
