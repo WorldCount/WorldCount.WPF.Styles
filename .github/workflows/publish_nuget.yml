@@ -19,17 +19,3 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.405
-      
-    - name: Build
-      run: |
-        dotnet build WorldCount.WPF.Styles\WorldCount.WPF.Styles.csproj -c Release
-        dotnet build Tests\WorldCount.WPF.Styles.Tests\WorldCount.WPF.Styles.Tests.csproj -c Release
-      
-    - name: Testing
-      run: dotnet test Tests\WorldCount.WPF.Styles.Tests\WorldCount.WPF.Styles.Tests.csproj
-      
-    - name: Packing
-      run: dotnet pack WorldCount.WPF.Styles\WorldCount.WPF.Styles.csproj --no-build -c Release -v q
-      
-    - name: Publish package
-      run: dotnet nuget push WorldCount.WPF.Styles\bin\Release\*.nupkg -k ${{ secrets.NUGETAPIKEY }} -n --skip-duplicate -s https://api.nuget.org/v3/index.json
